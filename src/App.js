@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-// import data from './data.js';
+import { postsEx } from './data';
 
 // Components
 import Home from './components/Home/Home.js';
@@ -10,9 +10,10 @@ import PostForm from './components/PostForm/PostForm.js';
 import UpdateForm from './components/UpdateForm/UpdateForm.js';
 import NavBar from './components/Navbar/NavBar.js';
 
+
 function App() {
   
-  // const [posts, setPosts] = useState(data)
+  const [posts, setPosts] = useState(postsEx)
   
   return (
     <div className="App">

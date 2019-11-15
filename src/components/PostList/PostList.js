@@ -9,6 +9,7 @@ const PostList = props => {
     const [ posts, setPosts ] = useState(postsEx)
     console.log(postsEx)
     
+    // deleting posts feature
     const delPost = (id) => {
         setPosts([...posts.filter((item) => (
             item.id !== id
