@@ -5,6 +5,7 @@ import { postsEx } from './data';
 
 // Components
 import Home from './components/Home/Home.js';
+import Login from './components/Login/Login.js';
 import PostList from './components/PostList/PostList.js';
 import PostForm from './components/PostForm/PostForm.js';
 import UpdateForm from './components/UpdateForm/UpdateForm.js';
@@ -19,10 +20,10 @@ function App() {
     <div className="App">
       <NavBar />
       <Route exact path='/' component={Home} />
+      <Route exact path='/log-in' component={Login} />
       <Route exact path='/my-account' component={PostList} />
       <Route exact path='/new-entry' component={PostForm} />
-      <Route exact path='/update-entry' component={UpdateForm} />
-      {/* posts.map(item => <p>{item.body}</p>)  This line is for test purposes */} 
+      <Route exact path='/update-entry' component={UpdateForm} /> 
     </div>
   );
 }
