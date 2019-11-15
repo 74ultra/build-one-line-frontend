@@ -1,4 +1,4 @@
-export default [
+export const postsEx = [
     {
         id: 1,
         date: 1573697990938,
