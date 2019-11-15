@@ -16,14 +16,17 @@ const PostList = props => {
         ))])}
 
     return (
-        <div>
-            { posts.map( item => (
-                <PostCard key={ item.id } 
-                          post={ item } 
-                          setPost={ setPosts }
-                          delPost={ delPost } />
-            ))}
-        </div>
+        <section>
+            <h1>{ Date.now() }</h1>
+            <div>
+                { posts.map( item => (
+                    <PostCard key={ item.id } 
+                            post={ item } 
+                            setPost={ setPosts }
+                            delPost={ delPost } />
+                ))}
+            </div> 
+        </section>
     )
 }
 

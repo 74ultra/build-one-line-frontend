@@ -2,8 +2,7 @@ import React from 'react'
 
 export default function EditBtn() {
     return (
-        <div>
-            edit
-        </div>
+        <button class="ui button">Edit</button>
+
     )
 }
