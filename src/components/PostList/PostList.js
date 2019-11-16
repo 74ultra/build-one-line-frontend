@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { postsEx } from '../../data.js';
+import Moment from 'react-moment';
 
 // Components
 import PostCard from '../PostCard/PostCard.js';
@@ -17,8 +18,13 @@ const PostList = props => {
 
     return (
         <section>
-            <h1>{ Date.now() }</h1>
-            <div>
+            <h1>
+                <Moment format='DD MMMM'>{ Date.now() }</Moment>
+            </h1>
+            <h3>
+                <Moment format='YYYY'>{ Date.now() }</Moment>
+            </h3>
+            <div style={{width: '65%', margin: ' 0 auto'}}>
                 { posts.map( item => (
                     <PostCard key={ item.id } 
                             post={ item } 
