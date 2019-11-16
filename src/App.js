@@ -10,6 +10,7 @@ import PostList from './components/PostList/PostList.js';
 import PostForm from './components/PostForm/PostForm.js';
 import UpdateForm from './components/UpdateForm/UpdateForm.js';
 import NavBar from './components/Navbar/NavBar.js';
+import NewAccount from './components/Login/NewAccount.js';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <NavBar />
       <Route exact path='/' component={Home} />
       <Route exact path='/log-in' component={Login} />
+      <Route exact path='/new-account' component={NewAccount} />
       <Route exact path='/my-account' component={PostList} />
       <Route exact path='/new-entry' component={PostForm} />
       <Route exact path='/update-entry' component={UpdateForm} /> 
