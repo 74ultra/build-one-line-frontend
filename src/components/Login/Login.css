@@ -1,0 +1,23 @@
+.form-wrapper {
+    margin: 50px auto;
+    width: 600px;
+}
+
+.form-body {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.new-user-wrapper {
+    margin: 40px 0;
+}
+
+#form-header {
+    text-align: center;
+}
+
+#form-btn-wrapper {
+    text-align: center !important;
+}
