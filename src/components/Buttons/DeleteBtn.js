@@ -3,9 +3,9 @@ import React from 'react'
 export default function DeleteBtn({ delPost, id }) {
     return (
         
-        <div class="ui animated fade button negative" tabindex="0" onClick={() => delPost(id)}>
-            <div class="visible content">Delete</div>
-            <div class="hidden content">
+        <div className="ui animated fade button negative" tabIndex="0">
+            <div className="visible content">Delete</div>
+            <div className="hidden content">
             X
             </div>
          </div>

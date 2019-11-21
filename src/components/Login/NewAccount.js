@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Form, Button, Header } from 'semantic-ui-react';
+import axios from 'axios';
 
 import './Login.css';
 
@@ -17,6 +19,13 @@ const NewAccount = props => {
         event.preventDefault();
         console.log(`Username: ${userCreds.username}, Password: ${userCreds.password}`)
         setUserCreds(blankState)
+        axios.post(`https://build-oneline.herokuapp.com/api/auth/register`, userCreds)
+            .then(res => {
+                console.log(res)
+                props.history.push('./log-in')
+            })
+            .catch(err => console.log(err))
+
     }
     
     return (
@@ -37,6 +46,10 @@ const NewAccount = props => {
                 </div>
                 
             </Form>
+            <div className='new-user-wrapper'>
+                <Header size='small'>Already have an account?</Header>
+                <Link to='/log-in'><Button>Sign in to your account</Button></Link>
+            </div>
             
         </div>
     )

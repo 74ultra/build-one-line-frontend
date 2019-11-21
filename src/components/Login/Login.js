@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import './Login.css';
 
@@ -16,8 +17,15 @@ const Login = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(`Username: ${userCreds.username}, Password: ${userCreds.password}`)
         setUserCreds(blankState)
+        axios.post(`https://build-oneline.herokuapp.com/api/auth/login`, userCreds)
+            .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('user_id', res.data.user_id)
+                props.history.push('/my-account')
+            })
+            .catch(err => console.log(err))
     }
     
     return (

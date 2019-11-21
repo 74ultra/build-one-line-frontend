@@ -1,22 +1,22 @@
 import React from 'react';
-
-// components
-import DeleteBtn from '../Buttons/DeleteBtn';
-import EditBtn from '../Buttons/EditBtn';
+import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
 import Moment from 'react-moment';
 
 const PostCard = props => {
-    const { id, date, body } = props.post
+
+
+    console.log(props)
     
     return (
-        <div class="ui segment" >
-            <h2 class="ui right floated header">
-                <Moment format='DD MMMM'>{ date }</Moment> 
+        <div className="ui segment" >
+            <h2 className="ui right floated header">
+                <Moment format='DD MMMM'>{props.post.date}</Moment> 
             </h2>
-            <div class="ui clearing divider"></div>
-            <p> { body } </p>
-            <DeleteBtn id={ id } delPost={ props.delPost } />
-            <EditBtn />
+            <div className="ui clearing divider"></div>
+            <p>{props.post.message}</p>
+            <Button color='red' onClick={() => props.deletePost(props.post.message_id)}>Delete</Button>
+            <Link to={`/update-entry/${props.post.message_id}`}><Button color='blue'>Edit</Button></Link>
         </div>
     )
 }
