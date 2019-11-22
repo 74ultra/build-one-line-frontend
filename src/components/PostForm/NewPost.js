@@ -3,55 +3,53 @@ import { Form, Header, Button } from 'semantic-ui-react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
+import './PostForm.css';
+
 // Contexts
 import PostContext from '../../contexts/PostContext.js';
-import { apiAuth } from '../../utils/api.js';
+
+const NewPost = props => {
+
+    const { addPost } = useContext(PostContext);
 
 
-const UpdateForm = props => {
-
-    console.log(props)
+    console.log(moment().format('YYYY-MM-DD'))
     
-    const { posts, setPosts } = useContext(PostContext);
-
-    const [messageToUpdate, setMessageToUpdate] = useState({
+    const [newEntry, setNewEntry] = useState({
         date: moment().format('YYYY-MM-DD'),
         message: '',
         user_id: parseInt(localStorage.getItem('user_id'))
     })
-    
+
+
     const handleChange = event => {
-        setMessageToUpdate({ ...messageToUpdate, [event.target.name]: event.target.value})
-        console.log(messageToUpdate.message)
+        setNewEntry({ ...newEntry, [event.target.name]: event.target.value})
+        console.log(newEntry.message)
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        apiAuth()
-            .put(`https://build-oneline.herokuapp.com/api/messages/${props.match.params.id}`, messageToUpdate)
-            .then(res => {
-                console.log(res.data)
-                props.history.push('/my-account')
-            })
+        addPost(newEntry)
+        props.history.push('/my-account')
     }
-    
+
 
     return (
         <div className='form-wrapper'>
             
             <Form onSubmit={handleSubmit} className='form-body'>
-                <Header id='form-header' size='medium'>Update Your Line</Header>
+                <Header id='form-header' size='medium'>Create a New Line</Header>
                 <Form.Field>
                     <input type='text' 
                            name='message' 
-                           placeholder='Edit your line' 
-                           value={messageToUpdate.message}
+                           placeholder='Enter your line for the day' 
+                           value={newEntry.message}
                            onChange={handleChange}
                     />
                 </Form.Field>
                 <div id='form-btn-wrapper'>
                     <Button color='green' type='submit'>Submit</Button>
-                    <Link to='/my-account'><Button>Cancel</Button></Link>
+                    <Link to='/my-account'><Button color='violet'>Cancel</Button></Link>
                 </div>
                 
             </Form>
@@ -59,21 +57,17 @@ const UpdateForm = props => {
     )
 }
 
-export default UpdateForm;
+export default NewPost;
 
 /*
 
-<div>
-            <Form onSubmit={handleSubmit}>
+<Form onSubmit={handleSubmit}>
                 <Form.Input    type= 'text'
-                               label='Edit post' 
-                               placeholder='Edit your post'
+                               label='New Line' 
+                               placeholder='Enter your line for the day'
                                name='message'
-                               value={messageToUpdate.message}
+                               value={newEntry.message}
                                onChange={handleChange}
                 />
             </Form>
-        </div>
-
-
 */

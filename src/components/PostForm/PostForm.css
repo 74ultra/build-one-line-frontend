@@ -1,6 +1,6 @@
 .form-wrapper {
     margin: 50px auto;
-    width: 600px;
+    max-width: 800px;
 }
 
 .form-body {
@@ -8,14 +8,7 @@
     padding: 20px;
     border: 1px solid lightgray;
     border-radius: 5px;
-}
-
-.new-user-wrapper {
-    margin: 40px 0;
-}
-
-.warning {
-    color: red !important;
+    background: #ECECEC;
 }
 
 #form-header {
