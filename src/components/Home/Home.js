@@ -10,7 +10,7 @@ const Home = props => {
         <div className='home-wrapper'>
             <div className='header-wrapper'>
                 <Header as='h1' icon>
-                  <Icon name='write' />
+                  <Icon color='teal' name='write' />
                   One Line a Day
                   <Header.Subheader className='sub-head'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -19,10 +19,10 @@ const Home = props => {
             </div>
             <div className='btn-wrapper'>
                 <Header as='h3'>Sign in or create a new account!</Header>
-                <Link to='/log-in'><Button>Sign In</Button></Link>
-                <Link to='/log-in'><Button>New Account</Button></Link>
+                <Link to='/log-in'><Button color='green'>Sign In</Button></Link>
+                <Link to='/new-account'><Button color='blue'>New Account</Button></Link>
             </div>
-            
+            <div className='alert'>{(localStorage.getItem('token') ? <h2>You are currently logged in</h2> : null)}</div>
         </div>
     )
 }

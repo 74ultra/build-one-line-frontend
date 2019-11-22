@@ -1,0 +1,9 @@
+.date-wrapper {
+    padding: 20px 0;
+    border-bottom: 1px solid lightgray;
+    background: #242424;
+}
+
+.head {
+    color: white !important;
+}

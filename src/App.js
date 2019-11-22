@@ -10,6 +10,8 @@ import NewPost from './components/PostForm/NewPost.js';
 import UpdateForm from './components/UpdateForm/UpdateForm.js';
 import NavBar from './components/Navbar/NavBar.js';
 import NewAccount from './components/Login/NewAccount.js';
+import Date from './components/Date/Date.js';
+
 
 // Helper functions
 import { PrivateRoute } from './utils/PrivateRoute.js';
@@ -54,12 +56,14 @@ function App() {
     <PostContext.Provider value={{ getPosts, posts, setPosts, deletePost, addPost }}>
       <div className="App">
         <NavBar />
+        <Date />
         <Route exact path='/' component={Home} />
         <Route exact path='/log-in' component={Login} />
         <Route exact path='/new-account' component={NewAccount} />
         <PrivateRoute exact path='/my-account' component={PostList} />
         <PrivateRoute exact path='/new-entry' component={NewPost} />
         <PrivateRoute exact path='/update-entry/:id' component={UpdateForm} /> 
+        
       </div>
     </PostContext.Provider>
     

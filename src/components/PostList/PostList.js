@@ -1,6 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { postsEx } from '../../data.js';
-import Moment from 'react-moment';
+import React, { useContext, useEffect } from 'react';
+import { Button, Header } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import './PostList.css';
 
 // Components
 import PostCard from '../PostCard/PostCard.js';
@@ -19,15 +20,12 @@ const PostList = props => {
 
 
     if(!posts) {
-        return <h2>Loading posts....</h2>
+        return <Header>Loading your lines....</Header>
     }
 
     return (
         <section>
-            <h1>
-                <Moment format='DD MMMM YYYY'>{ Date.now() }</Moment>
-            </h1>
-            
+            <Link to='/new-entry'><Button id='new-line-btn' color='green'>Create a new line</Button></Link>
             <div style={{width: '65%', margin: ' 0 auto'}}>
                 { posts.map( item => (
                     <PostCard key={ item.message_id } 
