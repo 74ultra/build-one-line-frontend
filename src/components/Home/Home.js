@@ -13,12 +13,15 @@ const Home = props => {
                   <Icon color='teal' name='write' />
                   One Line a Day
                   <Header.Subheader className='sub-head'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    One Line a Day provides a minimalist, easy to use journal to jot down your thoughts, record milestones, and celebrate accomplishments. Tell your story your way.
                   </Header.Subheader>
+                </Header>
+                <Header as='h2'>
+                    Everyday is a day to remember!
                 </Header>
             </div>
             <div className='btn-wrapper'>
-                <Header as='h3'>Sign in or create a new account!</Header>
+                <Header as='h3'>Sign in or create a new account</Header>
                 <Link to='/log-in'><Button color='green'>Sign In</Button></Link>
                 <Link to='/new-account'><Button color='blue'>New Account</Button></Link>
             </div>
