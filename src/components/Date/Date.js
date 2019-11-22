@@ -7,7 +7,7 @@ const Date = props => {
     return (
     
             <div className='date-wrapper'>
-                <Header className='head' size='large'>Today: {moment().format('MMMM Do YYYY')}</Header>
+                <Header className='head' size='large'>Today: {moment().format('MMMM Do YYYY, h:mm:ss a')}</Header>
             </div>
             
         
