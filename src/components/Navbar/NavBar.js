@@ -28,11 +28,16 @@ const NavBar = props => {
                             Home
                         </Menu.Item>
                     </Link>
-                    <Link to='/'>
+                    <a href='https://admiring-colden-eea018.netlify.com/index.html'>
                         <Menu.Item>
                             About
                         </Menu.Item>
-                    </Link>
+                    </a>
+                    <a href='https://silly-clarke-032675.netlify.com/about.html'>
+                        <Menu.Item>
+                            Our Team
+                        </Menu.Item>
+                    </a>
                     <Link to='/log-in'>
                         <Menu.Item>
                             Log In
@@ -66,11 +71,16 @@ const NavBar = props => {
                             Home
                         </Menu.Item>
                     </Link>
-                    <Link to='/'>
+                    <a href='https://admiring-colden-eea018.netlify.com/index.html'>
                         <Menu.Item>
                             About
                         </Menu.Item>
-                    </Link>
+                    </a>
+                    <a href='https://silly-clarke-032675.netlify.com/about.html'>
+                        <Menu.Item>
+                            Our Team
+                        </Menu.Item>
+                    </a>
                     <Link to='/my-account'>
                        <Menu.Item>
                             My Lines
